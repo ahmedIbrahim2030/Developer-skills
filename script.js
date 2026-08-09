@@ -1,5 +1,7 @@
-//Remeber : we'are gonna use strict mode in all scripts now!
 'use strict';
+//Remeber : we'are gonna use strict mode in all scripts now!
+
+/*
 
 const x = 23;
 if (x === 23) {
@@ -10,6 +12,11 @@ const calcAge = birthYear => 2037 - birthYear;
 console.log(calcAge(2003));
 
 console.log('Hello');
+
+
+*/
+/*
+
 
 
 //Problem Solving
@@ -65,6 +72,7 @@ console.log(amplitude);
 
 // 2) Breaking up into sun-problems
 //-  merge 2 arrays
+
 const calcTempAmplitudeNew = function (t1, t2) {
 
   const array1 = ['a', 'b', 'c'];
@@ -94,3 +102,68 @@ const amplitudeNew = calcTempAmplitudeNew([3, 5, 1], [9, 0, 5]);
 
 
 console.log(amplitudeNew);
+
+
+*/
+
+//Debugging : Process of finding, fixing, and prevents bugs
+
+
+const measureKelvin = function () {
+  const measurement = {
+    type : 'temp',
+    unit : "celsius",
+    //C)FIX
+    value :Number(prompt("Degress celsius:"))
+
+  }
+
+ 
+  //B) FIND
+  
+  const kelvin = measurement.value + 273;
+  return kelvin;
+}
+
+
+//A) IDENTIFY
+
+
+console.log(measureKelvin());
+
+
+
+
+
+//Using Debugger
+
+const calcTempAmplitudeBug = function (t1, t2) {
+  const array1 = ['a', 'b', 'c'];
+  const array2 = ['d', 'e', 'c'];
+  const array3 = array1.concat(array2);
+
+  const temps = t1.concat(t2);
+
+  console.log(temps);
+
+  let max = 0;
+  let min = 0;
+
+  for (let index = 0; index < temps.length; index++) {
+    const currentTemp = temps[index];
+
+    if (typeof currentTemp !== 'number') continue;
+
+   
+    if (currentTemp > max) max = currentTemp;
+    if (currentTemp < min) min = currentTemp;
+  }
+  return max - min;
+};
+
+const amplitudeBug = calcTempAmplitudeBug([3, 5, 1], [9, 0, 5]);
+
+
+//A)IDENTITY
+console.log(amplitudeBug);
+
